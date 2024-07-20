@@ -1,0 +1,33 @@
+<!-- This html file gives the contents of the 3D mindmapping tool login screen -->
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <title>Login Page</title>
+  <link type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"><link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./landing.css">
+</head>
+<body>
+<body class="align">
+  <h1>3D MindMaps</h1>
+  <div class="grid">
+    <!-- This form logins allow a user to login to their notebooks to acces their 3D workspaces -->
+    <form class="form login">
+      <div class="form__field">
+        <label for="login__username"><svg class="icon"></svg><span class="hidden">Username</span></label>
+        <input id="login__username" type="text" name="username" class="form__input" placeholder="Username">
+      </div>
+
+      <div class="form__field">
+        <label for="login__password"><svg class="icon"></svg><span class="hidden">Password</span></label>
+        <input id="login__password" type="password" name="password" class="form__input" placeholder="Password">
+      </div>
+      <div class="form__field" id="login_guidance"></div>
+    </form>
+    <button id ="submit" >Submit</button>
+    <button id ="create_account" >Create Account</button>
+    
+
+  </div>
+  <script src="./login.js"></script>
+</body>
+</html>

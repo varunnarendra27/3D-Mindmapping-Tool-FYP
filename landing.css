@@ -1,0 +1,80 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    
+}
+/* CSS for sign in button*/
+.signin-button {
+    border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #a4a5a5;
+  color: black;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  margin-right: 1%;
+  align-self: center;
+    
+}
+/* CSS for left half of the screen*/
+.left-half{
+    flex: 3; /* Each div takes up half of the container */
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+    background-image: url('/images/dotted_paper.jpg');
+    background-size: 50%;
+    background-repeat: repeat;
+        
+    
+}
+/* CSS for left half of the screen*/
+.right-half {
+    flex: 1; 
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    background-color: #f4f4f4;
+    flex-direction: column; 
+    overflow-y:scroll;
+    max-height: 100vh;
+    padding: 100px;
+    
+}
+/*CSS for image*/
+img {
+    width: 70%;
+    height: auto; /* Maintains the aspect ratio */
+  }
+
+h1{
+    font-size: 35pt;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+    margin: 0pt;
+}
+h3{
+    font-size: 10pt;
+    font-weight:7000;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center; /* Center text horizontally */
+
+}
+
+.centre{
+
+}

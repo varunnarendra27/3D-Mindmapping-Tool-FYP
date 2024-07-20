@@ -1,0 +1,387 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+/*CSS for Three.js environment*/
+#canvas_container {
+  position: absolute;
+  top: 35px; 
+  width: 100%;
+  height: calc(90% - 50px); 
+}
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+
+/*CSS for buttons used throughout the entire project*/
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #a4a5a5;
+  color: black;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  margin-right: 1%;
+  align-self: center;
+}
+button:hover {
+  border-color: #646cff;
+}
+/*CSS for top nav buttons for adding and removing notes*/
+.topnav {
+  background-color: rgb(224, 224, 224);
+  overflow: visible;
+  position: fixed;
+  top: 0;
+  height: 15%;
+}
+
+.topnav button {
+  display: inline-block;
+  margin: 0 3px; 
+}
+
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  
+}
+
+
+.topnav a:hover {
+  background-color: rgb(132, 132, 132);
+  color: rgb(220, 220, 220);
+}
+
+.topnav a.active {
+  background-color: #e7e7e7;
+  color: white;
+}
+
+/*CSS for alghnment of username nad password*/
+.align {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+          
+          
+}
+/*grid which holds the username and password input forms*/
+.grid {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 320px;
+  max-width: 20rem;
+  width: 90%;  
+}
+
+
+.hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.icons {
+  display: none;
+}
+/*CSS for grey box style for username and password*/
+.icon {
+  display: inline-block;
+  fill: #626668;
+  font-size: 16px;
+  font-size: 1rem;
+  height: 1em;
+  vertical-align: middle;
+  width: 1em;
+}
+html {
+  font-size: 100%;
+  height: 100%;
+}
+/*Defines main properties of the body*/
+body {
+  background-color: #e0e0e0;
+  color: #606468;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  height: 100%;
+  line-height: 1.5;
+  margin: 0;
+  min-height: 100vh;
+}
+
+a {
+  color: #eee;
+  outline: 0;
+  text-decoration: none;
+}
+
+a:focus,
+a:hover {
+  text-decoration: underline;
+}
+
+
+input {
+  border: 0;
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+
+}
+
+input[type='submit'] {
+  cursor: pointer;
+}
+
+.form {
+  margin: -14px;
+  margin: -0.875rem;
+}
+/*Define width of username and password input boxes*/
+.form input[type='password'],
+.form input[type='text'],
+.form input[type='submit'] {
+  width: 100%;
+}
+/*CSS for username and password field*/
+.form__field {
+  display: flex;
+  margin: 14px;
+  margin: 0.875rem;
+}
+/*One one form boxallowed per line*/
+.form__input {
+  flex: 1;
+}
+
+.login {
+  color: #eee;
+}
+/*Size properties of login labels*/
+.login label,
+.login input[type='text'],
+.login input[type='password'],
+.login input[type='submit'] {
+  border-radius: 0.25rem;
+  padding: 16px;
+  padding: 1rem;
+}
+/*basic properties of login labels*/
+.login label {
+  background-color: #a4a5a5;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  padding-left: 20px;
+  padding-left: 1.25rem;
+  padding-right: 20px;
+  padding-right: 1.25rem;
+}
+/*basic properties of login inputs*/
+.login input[type='password'],
+.login input[type='text'] {
+  background-color: #262b31;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+/*background of login inputs*/
+.login input[type='password']:focus,
+.login input[type='password']:hover,
+.login input[type='text']:focus,
+.login input[type='text']:hover {
+  background-color: #4a4646;
+}
+/*CSS for user prompts*/
+#login_guidance{
+  color: #ec1111;
+  font-size: small;
+  font-weight: 750;
+}
+
+.text--center {
+  text-align: center;
+}
+
+.webgl
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+    overflow: hidden;
+}
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  overflow: hidden; /* Preventting scrollbars from appearing */
+}
+/*Makes sure css fills entire scene*/
+.three-js-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+}
+/*CSS for container thats holds note editor*/
+.a4-container {
+  position: absolute;
+  top: 50px; 
+  left: 2%;
+  width: 30%; /* 1/5th of the screen width */
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000; 
+  display: none;
+}
+/*CSS for textbox thats holds note editor*/
+.a4-textbox {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+  resize: both;
+  overflow: auto; 
+  height: 100%; 
+}
+/*CSS for note editor*/
+#editorjs {
+  overflow-y: auto; 
+  max-height: calc(100% - 50px); 
+}
+
+.header {
+  margin-bottom: 10px; 
+  text-align: center;
+}
+/*CSS for save btton*/
+.save-button {
+  padding: 10px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.content {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 10px;
+  min-height: calc(100% - 50px);
+  overflow: auto;
+}
+
+.content[contenteditable="true"]:empty:before {
+  content: attr(placeholder);
+  color: #ccc;
+}
+/*CSS for 3D environment UI*/
+.grey-box{
+  margin: 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f0f0f0; 
+  width: 33.33vw;
+  height: 33.33vw;
+  background-color: #283445;
+  
+}
+/*CSS for new note container*/
+.new-note-container{
+  position:absolute;
+  padding: 20px;
+  padding-bottom: 20px;
+  top: 7%;
+  /*left:70%;*/
+  right: 1.5%;
+  width: 25%; /* 1/5th of the screen width */
+  height: 15%;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000; /* Set a higher z-index to overlay on top of Three.js */
+  display: none;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+.new-note-container h1{
+  font-size: 20pt;
+}
+/*CSS for search bar*/
+.search-bar{
+  position:absolute;
+  
+  padding: 20px;
+  padding-bottom: 20px;
+  top: 7%;
+  /*left:70%;*/
+  right: 1.5%;
+  width: 15%; /* 1/5th of the screen width */
+  height: 1%;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000; /* Setting a higher z-index to overlay on top of Three.js */
+  display: block;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  border: #213547;
+}
+.search-bar input{
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  justify-self: center;
+}
+
+.search-bar datalist option{
+  color: #f2f1f1;
+}
+
+

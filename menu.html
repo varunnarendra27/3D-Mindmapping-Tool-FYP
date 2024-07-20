@@ -1,0 +1,41 @@
+<!-- This is the html page which shows the user what notebooks they have made -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./menu.css">
+    <title>Homescreen</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="menu-bar">
+            <a href="#"></a>          
+        </div>
+        
+        <div class="content">
+            
+            <div class="greeting">
+                <h1 id="hi_name">Hi Varun,</h1>
+                <h3> _____</h3>
+                <h2>Lets Jump Back in</h2>
+                <button class = "create_new_notebook">&plus; New Notebook</button>
+                
+            </div>
+
+            <div class="flex-container">
+                <div class="notebook_creation_screen">
+                    <h1 class="CheckBox"> &#9745;</h1>
+                    <h2 id="new_notebook_title" contenteditable="true">Enter Notebook Title</h2>
+                    <p>_________________________</p>
+                    <h3 id="new_notebook_description" contenteditable="true">Enter Notebook description </h3> 
+                    <button class="save_new_notebook" onclick="save_new_notebook()">Create New Notebook</button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+</body>
+<script src="./menu.js"></script>
+</html>

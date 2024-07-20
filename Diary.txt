@@ -1,0 +1,145 @@
+October 10th:
+I created a new file. It is here where I set up the packages needed to use three.js effectively. I also created a cube in the scene to check if everything is working correctly. This test was crucial to test if three.js was installed correctly and that vite.js was running on localhost properly.
+October 11th: 
+I wrote code to create initial sphere nodes, and added tools to zoom, pan and drag the objects. These tools are crucial to allow the user to navigate around the scene effectively.
+October 13th:
+Coded with light to add 3D look to each sphere. I had a problem where, due to lighting issues, the spheres do not look three dimensional. By changing to a mesh texture, this issue was fixed, and the principles of the project were not broken.
+October 15th:
+Used geometry programming to calculate where lines will need to be drawn based on node calculations. This involved working out the individual centre coordinates of each node using a built-in function provided in three.js. These lines are then added to the scene. To show a visual continuity of ideas.
+October 22 to 24th:
+I spent some time working on laying the html over the 3D space. This allows me to eventually click on a node, and the note data with then appear.
+October 28th: 
+Used ray tracking to track the mouse position on the screen. This allowed me to detect if a node is being hovered over and clicked on. I added an event handler to test this. This was tested by outputting a console.log into the program to test if the clicked node is detected. This was crucial to adding nodes later on.
+October 30th:
+Added creation of objects functionality allowing user to click on space and node will appear. This is put in the form of a toolbar in the top left. This is done by ray tracking which coordinate has been clicked on the screen. A new object is then created where the user clicks.
+November 7th:
+Started working on connecting database to project to employ a user database. Also working on removing nodes from scene.
+November 12th:
+I finished removing nodes from a scene. This worked by using ray tracking to calculate if a mouse is currently over a note sphere. I used a Boolean attached to an event handler to check if the remove button has been toggled on. If it has, the ID of the node clicked via ray tracking will be retrieved and used to remove it from the scene. 
+November 27th: 
+I was able to add floating titles next to each note sphere. This was achieved using the sprite functionality provided by three.js. It is then passed into a createTextTexture() class responsible for providing the styling for the font, fill style and filling of text. This texture is then returned. In the animation function, the text sprites are programmed to always face the camera. This allows the titles to always be in view.
+November 28th:
+I changed the structure of files opened first so that the login page always opens first so that a user can log into their work. It’s understood that vite.js works by opening the html document named index.html first. I therefore renamed my files to factor this in. 
+December 4th:
+Set up initial files to perform routing and get/post requests for express.js. This will be integral with connecting the frontend application to the database. Organisation occurred to ensure that no organisation remains intact.
+December 5th: 
+I created connection to the backend database run on postgres. This will be integral to performing queries in the future for storing user information and note information.
+December 7th:
+I tested initial queries to retrieve data from the database via the project program. This will allow me to create more complex queries later which is very important for the success of this project. This is a step further than what I had planned to do initially.
+
+January 20th:
+I began the process of creating a home screen. This will show a user all the notebooks that they have created on their account. 
+I want it to be dynamic, so that it supports the need for adding new notebooks in the future. This is not fully integrated with my program yet however.
+
+January 22nd:
+I was having an issue where express.js was unable to run three.js programs in this server whcih is integral to the server. It took a while to find a solution as the project ran a blank screen each time.
+I fixed this by updating the scripts part of package.json file to run vite.js and express.js concurrently. This means that vite can handle the running of the project, and express can handle the server requests.
+It was important to do this in order to allow the 3D note space to communicate with the SQL database.
+
+January 23rd:
+With vite and express now working concurrently, I was able to create my first get request from my main.js file to the server to perform a select statement to check if a user is able to log in effectively. I will need to consider using a post request in the future as it is more secure.
+
+January 24th:
+I inserted dummy note data into my tbl_notes table so I could write code in to dynamically load in notes into the 3D space in the format of a linked list. This is integral to the overall function of the program. The user will need to click on a notebook, and then all notes will need to appear for it.
+
+January 29th:
+I was encountering a bug where the note spheres were not loading correctly in certain scaenarios due to the lack of functional design in my program. I refactored and updated this to fix the loading.
+I have also had a supervisor meeting. Doctor Koutsoukos suggested that creating a menu and landing page would really make the program feel more like a tool and heighten user exprerience, so this will need to become a priority.
+
+February 1st:
+I created a basic landing page using design elements from the 3D space. I also redirected the html pages to follow the page:
+- landing page
+- sign in page
+- menu oage
+- 3D space
+I updated the menu page to create the styling of how each notebook should appear in the menu page and added dummy data to simulate it. At the moment, clicking on any notebook will open the same notebook. 
+I will need to update this in the future to
+- load notebooks assigned to users dynamically
+- open the right notebook when the notebook is clicked
+
+February 3rd:
+I removed dummy notebooks and wrote code to dynamically load notebooks instead. I had issues with recieving data from the login page to ensure that notebooks for the correct user is pulled in. I did this using local storage.
+I used a post request to retrieve all notebooks associated to a user in the database. I then appended the notelinkid to the id of a notebook which is concatenated to the container which holds the notebooks in the html.
+This is important so that the user can click ona s pecific notebook, and the right notes are loaded into the 3D space.
+The descriptions assocated with each notebook are also loaded into the correct notebook in the html.
+
+February 8th:
+The note titles and lines were not moving when a note is moved around the space. I changed this using the animation loop so that the line updates every time a note is moved in the 3D space. This also applied to the note titles.
+
+February 17th:
+In the gap between the last commit, I realised that I had a fundemental flaw in my program. I was loading in my notes at linked lists. 
+The problem with this is that each note can only have at most 2 connections. This is wrong as mindmap should be able to have as many connections as they like between notes. 
+To update this, I realised I need to store my note data as a tree instead of a linked list. So i updated my database to show this. 
+I also implemented a stack data structure as this will be required to do a depth first traversal of my note tree, in order to load the data as it is viewed.
+
+February 18th: 
+I had shown my program to various people who kept assuming that I was building a solar system simulator. This was due to the dark background with circular notes.
+I figured in order to fix this, I would need to change the background to white. This matched my menu screen as well. That being said, I felt that it made the 3D space feel quite plain, and less like a tool.
+I added squared and dotted paper backgrounds to fix this, which dramatically improved the user interface.
+
+February 22nd:
+I wanted to move on with the functionality of the program. I needed a UI to; let the user create a new note, and give the option to choose what existing note the new note note should connect to.
+This has now been achieved. It however is not updating in the database yet.
+I had another supervisor meeting. The feedback was that the program felt a lot more complete after implementing a menu system. 
+I had expressed that my text editor was quite basic at the moment, and asked whether I could use an external API that I could integrate well with my project, which my supervisor said would be a good idea so I will make this the next priority.
+
+February 23rd:
+After doing some research on the different external editors I could use to integrate with my project, I landed on editor.js
+This was due to the documentation available for this API, and the fact that any text written on the text editor could be saved in a JSON format for storage. This is good for storing user's notes in the database.
+I used specific libraries that would be useful for notetaking such as:
+- Heading
+- Pictures
+- Numbered Lists
+- Bullet Point Lists
+- etc 
+This should make the tool a compelling resource for programming.
+
+February 26th:
+The note editor was encountering an overflow issue, where writing too much text would lead to the texte editor growing insize instead of just becoming scrollable. This is now fixed.
+
+March 9th:
+This day was dedicated to making sure that the correct note was loaded when a 3D note was clicked on. It involved a few steps:
+- Updating note titles to reflect the titles of the note in the database. This was difficult as the program treats them as two different objects. I had to link them via their id in order to update a title when it is changed.
+- I had an issue with the clicking event handler. It triggers when any object is clicked, but I wanted it to only trigger when a note is clicked. I used layers to solve this. By putting note objects on a different layer to lines and titles, the event handler is triggered correctly.
+- Implementing a save button in the note editor to save any changed made to the note title and notes to database when new changes are made
+- Implementing loading so that when anew note is clciked, the right JSON in pulled from the database based on the id of the 3D note.
+
+March 11th:
+I went back to the connecting notes UI section of my program to add code to update the database when a new note is added so that a new note is properly saved to be accessed upon reload.
+I also created a UI in the menu screen to allow the user to create new notebooks on the click of a button.
+
+March 12th:
+The database now updates to save any new notebooks created.
+
+March 13th:
+I wanted move on the next set of functionality for my program. This was to create a search bar in the 3D space to look for specific notes in the space.
+I achieved this using datalists in html. This inbuilt functionality allows a user to see all notes in the search option and type to filter between the notes that they want.
+To indicate the note that is being searched for, I changed the colour to blue to highlight it.
+
+March 14th:
+I took the search functionality a step further by using research on mathematics relating to camera placement to move the camera closer to a note that is being search for to really highlight its location.
+
+March 27th:
+With the submission deadline fast appraoching, I felt the need to spend some time on my report. I did a lot of work on the technical review
+I also spent some time fixing a glitch associated with adding an image to the note editor. It is now editable
+
+March 28th:
+I was having an issue with my drag functionality of notes. Effectively, when i moved the note, the lines were not updating with it. This is now fixed so the lines and note titles move with the note.
+
+April 1st:
+Continued with my report. I have finished writing about software engineering principles, and database design. I have also made good progress on the technical section.
+I also spent time to removed some unused files to refactor the program to improve readability and reduce file size
+
+April 2nd:
+I created a set up menu so the user knows how to install the program on their own machine.
+This took awhile as I had to double checked the queries that I used to create my database could be run all together to save time.
+
+April 3rd:
+I am approaching the end of my report so I wanted to improve my login system.
+I added the ability to check the format of the login system and to give the user prompts based on what is entered
+
+April 4th:
+Refactored code and added jsdoc for added readability. Today was focused on getting the project ready for submission. This involved cleaning up any unused code and removing console.logs(). I also used this time to proof read my work
+
+
+

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Display</title>
+  </head>
+  <body>
+    <div class="topnav">
+      <button id="add_node">Add Note</button>
+      <button id="remove_node">Remove Note</button>
+    </div>
+      
+    <div id="canvas_container"></div>
+      
+    
+
+    <div class="search-bar">
+      <input id="search_input" type="text" placeholder="Search..." list="search_note_titles">
+      <datalist id="search_note_titles">
+      </datalist>
+    </div>
+
+      
+
+    <div class="a4-container">
+      <div class="a4-textbox">
+        <div class="header">
+          <h2 class = "note-title" contenteditable="true" placeholder="Start typing...">Title Text</h2>
+          <button class="save-node">Save</button>
+        </div>
+        <div id="editorjs"></div>
+      </div>
+    </div>
+
+
+    <div class="new-note-container" id="click_to_connect">
+      
+        <div class="header">
+          <h1 class = "note-title">Create New Note</h1>
+          <h2>What do you want to connect to? Click On Note
+          </h2>
+        </div>
+    </div>
+
+    <div class="new-note-container" id="connecting_confirmation">
+      <div class="header">
+        <h1 class = "note-title" id= "new_note_title" contenteditable="true" placeholder="Start typing...">Enter a note title</h1>
+        <br>
+        <button class="save-node" id = "save_note_title">Save</button>
+        
+      </div>
+    </div>
+  <script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/@editorjs/bold@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@editorjs/italic@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest"></script>
+  <script src=" https://cdn.jsdelivr.net/npm/@editorjs/nested-list@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/editorjs-drag-drop"></script>
+  <script src="https://cdn.jsdelivr.net/npm/editorjs-undo"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@calumk/editorjs-nested-checklist@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@editorjs/marker@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@editorjs/inline-code@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@editorjs/underline@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/editorjs-text-color-plugin@2.0.3/dist/bundle.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/editorjs-inline-image"></script>
+
+  <!-- Include Editor.js -->
+  <script src="https://cdn.jsdelivr.net/npm/editorjs@latest"></script>
+    <script type="module" src="/main.js"></script>
+    
+  </body>
+</html>
+
